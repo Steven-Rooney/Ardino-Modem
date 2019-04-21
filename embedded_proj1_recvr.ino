@@ -102,7 +102,7 @@ void loop() {
     
     for (int i = 0; i < 8; i++) {
       c = c >> 1;
-      // Serial.println(c, BIN);
+      
       if (getBit() == 1) {
           c = c | 0x80;
       }
@@ -117,12 +117,12 @@ void loop() {
       
        if (servoReadCounter == 2) {
         servoSetAngle = (charInt * 100);
-        //Serial.println(servoSetAngle);
+        
         servoReadCounter--;
        }
        else if (servoReadCounter == 1) {
         servoSetAngle = servoSetAngle + (charInt * 10);
-        //Serial.println(servoSetAngle);
+        
         servoReadCounter--;
        }
        else if (servoReadCounter == 0) {
@@ -164,12 +164,7 @@ float getPitch() {
       largestIndex = j;
     }
   }
-  //for(int i=0; i<SAMPLES/2; i++)
- // {
-   // Serial.print(i);
-   // Serial.print(" ");
-   // Serial.println(freqmag[i]);
- // }
+
   if (valueLargestIndex < 0.1) {
     return -1;
   }
